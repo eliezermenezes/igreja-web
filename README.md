@@ -1,6 +1,6 @@
-frontend
+## frontend
 
-Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
+Este projeto foi gerado com [Ionic CLI](https://ionicframework.com/docs/) version 5.4.4.
 
 ## Pré-requisitos
 
@@ -8,14 +8,6 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 *  Npm version 6.9.0
 *  Angular CLI version 8.3.12
 *  Ionic CLI version 5.4.4
-
-## Instalação
-
-Navegue até a pasta do projeto e execute `npm install` para instalar as dependências.
-
-## Servidor de desenvolvimento
-
-Execute `ionic serve` para iniciar o servidor de desenvolvimento. Navegue para `http://localhost:8100/`. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Ajuda
 
