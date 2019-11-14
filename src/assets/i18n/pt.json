@@ -1,0 +1,20 @@
+{
+    "title": "Igreja Batista Sal da Terra",
+    "home": "Página inicial",
+    "secretary": {
+        "name": "Secretaria",
+        "members": "Membros",
+        "settings": "Configurações"
+    },
+    "patrimony": {
+        "name": "Patrimônio",
+        "assets": "Bens",
+        "reservations": "Reservas"
+    },
+    "financial": {
+        "name": "Financeiro",
+        "revenue": "Receitas",
+        "expenses": "Despesas",
+        "extract": "Extrato"
+    }
+}

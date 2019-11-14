@@ -1,0 +1,20 @@
+{
+    "title": "Batista Sal da Terra Church",
+    "home": "Home",
+    "secretary": {
+        "name": "Secretary",
+        "members": "Members",
+        "settings": "Settings"
+    },
+    "patrimony": {
+        "name": "Patrimony",
+        "assets": "Assets",
+        "reservations": "Reservations"
+    },
+    "financial": {
+        "name": "Financial",
+        "revenue": "Revenue",
+        "expenses": "Expenses",
+        "extract": "Extract"
+    }
+}

@@ -1,0 +1,15 @@
+<div class="ion-padding custom-skeleton" *ngIf="!user">
+    <app-loading></app-loading>
+</div>
+
+<div *ngIf="user">
+    <ion-item>
+        <ion-label class="text-center">
+            <img width="100" src="https://baltaio.blob.core.windows.net/assets/images/badge-level-0.png">
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label> {{ user.name }} <br><small> {{ user.profile }} </small></ion-label>
+        <ion-icon class="clickable" lot="end" color="light" name="log-out" (click)="logout()"></ion-icon>
+    </ion-item>
+</div>
