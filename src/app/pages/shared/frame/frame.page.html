@@ -5,43 +5,43 @@
             <ion-item-divider>
                 <ion-label>&nbsp;</ion-label>
             </ion-item-divider>
-            <ion-item class="clickable" (click)="goToPage('pagina-inicial')" detail>
+            <ion-item class="clickable" (click)="goToPage('pages/home')" [class.active]="isActivePage('pages/home')" detail>
                 <ion-icon slot="start" color="light" name="home"></ion-icon> {{ 'home' | translate }}
             </ion-item>
             <ion-item-divider>
                 <ion-label>{{ 'secretary.name' | translate }}</ion-label>
             </ion-item-divider>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
+            <ion-item class="clickable" (click)="goToPage('pages/members')" [class.active]="isActivePage('pages/members')" detail>
                 <ion-icon slot="start" color="light" name="people"></ion-icon> {{ 'secretary.members' | translate }}
             </ion-item>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
+            <ion-item class="clickable" (click)="goToPage('pages/settings')" [class.active]="isActivePage('pages/settings')" detail>
                 <ion-icon slot="start" color="light" name="settings"></ion-icon> {{ 'secretary.settings' | translate }}
             </ion-item>
             <ion-item-divider>
                 <ion-label>{{ 'patrimony.name' | translate }}</ion-label>
             </ion-item-divider>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
-                <ion-icon slot="start" color="light" name="gift"></ion-icon> {{ 'patrimony.assets' | translate }}
+            <ion-item class="clickable" (click)="goToPage('pages/goods')" [class.active]="isActivePage('pages/goods')" detail>
+                <ion-icon slot="start" color="light" name="gift"></ion-icon> {{ 'patrimony.goods' | translate }}
             </ion-item>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
+            <ion-item class="clickable" (click)="goToPage('pages/reservations')" [class.active]="isActivePage('pages/reservations')" detail>
                 <ion-icon slot="start" color="light" name="speedometer"></ion-icon>
                 {{ 'patrimony.reservations' | translate }}
             </ion-item>
             <ion-item-divider>
                 <ion-label>{{ 'financial.name' | translate }}</ion-label>
             </ion-item-divider>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
+            <ion-item class="clickable" (click)="goToPage('pages/revenue')" [class.active]="isActivePage('pages/revenue')" detail>
                 <ion-icon slot="start" color="light" name="arrow-up"></ion-icon> {{ 'financial.revenue' | translate }}
             </ion-item>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
+            <ion-item class="clickable" (click)="goToPage('pages/expenses')" [class.active]="isActivePage('pages/expenses')" detail>
                 <ion-icon slot="start" color="light" name="arrow-down"></ion-icon>
                 {{ 'financial.expenses' | translate }}
             </ion-item>
-            <ion-item class="clickable" (click)="goToPage('orders')" detail>
-                <ion-icon slot="start" color="light" name="options"></ion-icon> {{ 'financial.extract' | translate }}
+            <ion-item class="clickable" (click)="goToPage('pages/extracts')" [class.active]="isActivePage('pages/extracts')" detail>
+                <ion-icon slot="start" color="light" name="options"></ion-icon> {{ 'financial.extracts' | translate }}
             </ion-item>
         </ion-list>
     </ion-content>
-    <app-menu-footer></app-menu-footer>
+    <app-menu-footer (loadLanguage)="changeLanguage($event)"></app-menu-footer>
 </ion-menu>
 <ion-router-outlet id="my-app"></ion-router-outlet>

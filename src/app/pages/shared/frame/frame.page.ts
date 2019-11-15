@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, MenuController } from '@ionic/angular';
 import { UserModel } from 'src/app/models/user.model';
+import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-frame',
@@ -9,9 +11,12 @@ import { UserModel } from 'src/app/models/user.model';
 })
 export class FramePage implements OnInit {
     public user: UserModel;
+    public activePage: string;
+
     constructor(
         private navCtrl: NavController,
-        private menuCtrl: MenuController
+        private menuCtrl: MenuController,
+        private translate: TranslateService,
     ) { }
 
     ngOnInit() {
@@ -29,10 +34,19 @@ export class FramePage implements OnInit {
     goToPage(page: string) {
         this.menuCtrl.close();
         this.navCtrl.navigateRoot(page);
+        this.activePage = page;
+    }
+
+    isActivePage(page: string): boolean {
+        return page === this.activePage;
     }
 
     logout(user: UserModel) {
         console.log('clicou no logout', user.username);
         this.navCtrl.navigateRoot('/login');
+    }
+
+    changeLanguage(language: string) {
+        this.translate.use(language);
     }
 }

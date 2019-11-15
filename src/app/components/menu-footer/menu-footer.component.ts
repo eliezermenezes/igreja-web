@@ -1,5 +1,6 @@
 import { environment } from 'src/environments/environment';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-menu-footer',
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuFooterComponent implements OnInit {
     public currentVersion: string = environment.currentVersion;
+
+    @Output()
+    public loadLanguage = new EventEmitter<string>();
+
     constructor() { }
 
     ngOnInit() { }
+
+    translate(language: string) {
+        this.loadLanguage.emit(language);
+    }
 }

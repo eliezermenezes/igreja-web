@@ -1,4 +1,6 @@
 {
+    "en": "Inglês",
+    "pt": "Português",
     "title": "Igreja Batista Sal da Terra",
     "home": "Página inicial",
     "secretary": {
@@ -8,13 +10,13 @@
     },
     "patrimony": {
         "name": "Patrimônio",
-        "assets": "Bens",
+        "goods": "Bens",
         "reservations": "Reservas"
     },
     "financial": {
         "name": "Financeiro",
         "revenue": "Receitas",
         "expenses": "Despesas",
-        "extract": "Extrato"
+        "extracts": "Extratos"
     }
 }

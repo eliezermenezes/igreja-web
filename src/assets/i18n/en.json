@@ -1,4 +1,6 @@
 {
+    "en": "English",
+    "pt": "Portuguese",
     "title": "Batista Sal da Terra Church",
     "home": "Home",
     "secretary": {
@@ -8,13 +10,13 @@
     },
     "patrimony": {
         "name": "Patrimony",
-        "assets": "Assets",
+        "goods": "Goods",
         "reservations": "Reservations"
     },
     "financial": {
         "name": "Financial",
         "revenue": "Revenue",
         "expenses": "Expenses",
-        "extract": "Extract"
+        "extracts": "Extracts"
     }
 }
