@@ -8,8 +8,10 @@ import { UserModel } from 'src/app/models/user.model';
 })
 export class HomePage implements OnInit {
     public user: UserModel;
-    
-    constructor() {}
+    public users: UserModel[] = [];
+    public loading: boolean = true;
+
+    constructor() { }
 
     ngOnInit() {
         this.user = {
@@ -21,5 +23,28 @@ export class HomePage implements OnInit {
             roles: ['employee', 'manager'],
             profile: 'Coordenador'
         };
+
+        setTimeout(() => {
+            this.setUsers();
+        }, 1500);
+
+    }
+
+    setUsers() {
+        for (let i = 0; i < 10; i++) {
+            this.users.push(this.user);
+        }
+        this.loading = false;
+    }
+
+    loadData(event: any) {
+        setTimeout(() => {
+            this.setUsers();
+            event.target.complete();
+
+            if (this.users.length == 30) {
+                event.target.disabled = true;
+            }
+        }, 1000);
     }
 }

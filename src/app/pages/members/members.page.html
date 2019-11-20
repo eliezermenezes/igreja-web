@@ -1,11 +1,60 @@
 <app-navbar></app-navbar>
 
-<ion-content class="ion-padding">
-    <ion-grid>
+<ion-content class="ion-padding" *ngIf="loading">
+    <ion-grid class="md grid-fixed">
+        <app-loading></app-loading>
+    </ion-grid>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="users.length > 0">
+    <ion-grid class="md grid-fixed">
         <ion-row>
-            <ion-col size-md="12">
-                <app-loading></app-loading>
-                <h1 class="text-right">Membros</h1>
+            <ion-col>
+                <ion-toolbar>
+                    <ion-title size="large"> {{ 'secretary.members' | translate }} </ion-title>
+                </ion-toolbar>
+                <ion-toolbar>
+                    <ion-searchbar color="light"></ion-searchbar>
+                </ion-toolbar>
+
+                <ion-list>
+                    <ion-list-header>
+                        <small class="uppercase">
+                            {{ 'secretary.recent_members' | translate }}
+                        </small>
+                    </ion-list-header>
+
+                    <ion-item>
+                        <ion-avatar slot="start">
+                            <img src="./avatar-poe.png">
+                        </ion-avatar>
+                        <ion-label>
+                            <h2>Poe</h2>
+                            <h3>New Ride</h3>
+                            <p>I just upgraded my X-Wing. Next time...</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list>
+                    <ion-list-header>
+                        <small class="uppercase">
+                            {{ 'secretary.members' | translate }}
+                        </small>
+                    </ion-list-header>
+
+                    <ion-item *ngFor="let user of users" class="clickable" detail>
+                        <ion-avatar slot="start">
+                            <img src="https://baltaio.blob.core.windows.net/assets/images/badge-level-0.png">
+                        </ion-avatar>
+                        <ion-label>
+                            <h2>{{ user.name }}</h2>
+                            <h3>I'm a big deal</h3>
+                            <p>{{ user.profile }}</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+                <app-infinite-scroll (loadData)="loadData($event)"></app-infinite-scroll>
             </ion-col>
         </ion-row>
     </ion-grid>

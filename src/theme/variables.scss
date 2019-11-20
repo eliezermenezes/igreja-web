@@ -2,6 +2,7 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+
 :root {
     --ion-font-family: 'Montserrat', sans-serif;
 
@@ -96,25 +97,4 @@
     --ion-color-step-850: #dcdcdc;
     --ion-color-step-900: #e8e8e8;
     --ion-color-step-950: #f3f3f3;
-
-    --ion-border-color: var(--ion-color-dark-shade);
-    --ion-background-color: var(--ion-color-dark);
-    --ion-background-color-rgb: var(--ion-color-dark-rgb);
-    --ion-text-color: var(--ion-color-light);
-    --ion-text-color-rgb: var(--ion-color-light-rgb);
-
-    ion-alert,
-    ion-toast,
-    ion-action-sheet {
-        --background: var(--ion-color-dark-shade);
-    }
-  
-    ion-toast {
-        color: rgba(255, 255, 255, 0.8);
-        --button-color: #fff;
-  
-        a {
-            color: rgba(255, 255, 255, 0.8);
-        }
-    }
 }

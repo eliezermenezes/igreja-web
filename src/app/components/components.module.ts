@@ -6,13 +6,17 @@ import { IonicModule } from '@ionic/angular';
 import { UserCardComponent } from './user-card/user-card.component';
 import { MenuFooterComponent } from './menu-footer/menu-footer.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
+import { ItensMenuComponent } from './itens-menu/itens-menu.component';
 
 @NgModule({
     declarations: [
         NavbarComponent,
         LoadingComponent,
         UserCardComponent,
-        MenuFooterComponent
+        MenuFooterComponent,
+        InfiniteScrollComponent,
+        ItensMenuComponent
     ],
     imports: [
         CommonModule,
@@ -23,7 +27,9 @@ import { TranslateModule } from '@ngx-translate/core';
         NavbarComponent,
         LoadingComponent,
         UserCardComponent,
-        MenuFooterComponent
+        MenuFooterComponent,
+        InfiniteScrollComponent,
+        ItensMenuComponent
     ]
 })
 export class ComponentsModule { }

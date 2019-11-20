@@ -6,6 +6,7 @@
     "secretary": {
         "name": "Secretary",
         "members": "Members",
+        "recent_members": "Recent Members",
         "settings": "Settings"
     },
     "patrimony": {
@@ -18,5 +19,6 @@
         "revenue": "Revenue",
         "expenses": "Expenses",
         "extracts": "Extracts"
-    }
+    },
+    "loading_more_data": "Loading more data..."
 }

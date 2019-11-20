@@ -6,6 +6,7 @@
     "secretary": {
         "name": "Secretaria",
         "members": "Membros",
+        "recent_members": "Membros Recentes",
         "settings": "Configurações"
     },
     "patrimony": {
@@ -18,5 +19,6 @@
         "revenue": "Receitas",
         "expenses": "Despesas",
         "extracts": "Extratos"
-    }
+    },
+    "loading_more_data": "Carregando mais dados..."
 }

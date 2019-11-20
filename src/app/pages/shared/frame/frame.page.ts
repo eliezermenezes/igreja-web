@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, MenuController } from '@ionic/angular';
 import { UserModel } from 'src/app/models/user.model';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { PageModel } from 'src/app/models/page.model';
 
 @Component({
     selector: 'app-frame',
@@ -10,25 +10,82 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./frame.page.scss'],
 })
 export class FramePage implements OnInit {
+    public groups: any;
+
     public user: UserModel;
-    public activePage: string;
+    public activePage: String;
 
     constructor(
         private navCtrl: NavController,
         private menuCtrl: MenuController,
-        private translate: TranslateService,
+        private translate: TranslateService
     ) { }
 
     ngOnInit() {
-        this.user = {
-            name: 'Eliezer Menezes',
-            username: 'menezes',
-            email: 'menezes@example.dom',
-            image: 'https://baltademos.blob.core.windows.net/eshop/batman.png',
-            token: 'aHR0cHM6Ly9iYWx0YWRlbW9zLmJsb2IuY29yZS53aW5kb3dzLm5ldC9lc2hvcC9iYXRtYW4ucG5n',
-            roles: ['employee', 'manager'],
-            profile: 'Coordenador'
-        };
+        setTimeout(() => {
+            this.groups = [{
+                'pages': [
+                    {
+                        'title': 'home',
+                        'url': 'pages/home',
+                        'icon': 'home'
+                    }
+                ]
+            }, {
+                'name': 'secretary.name',
+                'pages': [
+                    {
+                        'title': 'secretary.members',
+                        'url': 'pages/members',
+                        'icon': 'people'
+                    }, {
+                        'title': 'secretary.settings',
+                        'url': 'pages/settings',
+                        'icon': 'settings'
+                    }
+                ]
+            }, {
+                'name': 'patrimony.name',
+                'pages': [
+                    {
+                        'title': 'patrimony.goods',
+                        'url': 'pages/goods',
+                        'icon': 'gift'
+                    }, {
+                        'title': 'patrimony.reservations',
+                        'url': 'pages/reservations',
+                        'icon': 'speedometer'
+                    }
+                ]
+            }, {
+                'name': 'financial.name',
+                'pages': [
+                    {
+                        'title': 'financial.revenue',
+                        'url': 'pages/revenue',
+                        'icon': 'arrow-up'
+                    }, {
+                        'title': 'financial.expenses',
+                        'url': 'pages/expenses',
+                        'icon': 'arrow-down'
+                    }, {
+                        'title': 'financial.extracts',
+                        'url': 'pages/extracts',
+                        'icon': 'options'
+                    }
+                ]
+            }];
+
+            this.user = {
+                name: 'Eliezer Menezes',
+                username: 'menezes',
+                email: 'menezes@example.dom',
+                image: 'https://baltademos.blob.core.windows.net/eshop/batman.png',
+                token: 'aHR0cHM6Ly9iYWx0YWRlbW9zLmJsb2IuY29yZS53aW5kb3dzLm5ldC9lc2hvcC9iYXRtYW4ucG5n',
+                roles: ['employee', 'manager'],
+                profile: 'Coordenador'
+            };
+        }, 3000);
     }
 
     goToPage(page: string) {

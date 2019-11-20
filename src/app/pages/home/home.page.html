@@ -1,11 +1,44 @@
 <app-navbar></app-navbar>
 
-<ion-content class="ion-padding">
-    <ion-grid>
+<ion-content class="ion-padding" *ngIf="loading">
+    <ion-grid class="md grid-fixed">
+        <app-loading></app-loading>
+    </ion-grid>
+</ion-content>
+
+
+<ion-content class="ion-padding" *ngIf="users.length > 0">
+    <ion-grid class="md grid-fixed">
         <ion-row>
-            <ion-col size-md="12">
-                <app-loading></app-loading>
-                <h1 class="text-right">Página inicial</h1>
+            <ion-col>
+                <ion-toolbar>
+                    <ion-title size="large"> {{ 'secretary.settings' | translate }} </ion-title>
+                </ion-toolbar>
+                <ion-toolbar>
+                    <ion-searchbar color="light"></ion-searchbar>
+                </ion-toolbar>
+
+                <ion-list>
+                    <ion-item-divider>
+                        <ion-label>Membros</ion-label>
+                    </ion-item-divider>
+                    <ion-item class="clickable" *ngFor="let user of users">
+                        <h1 slot="start">
+                            <ion-icon name="arrow-down"></ion-icon>
+                        </h1>
+                        <ion-label>
+                            {{ user.name }}
+                            <br>
+                            <small>
+                                {{ user.profile }}
+                            </small>
+                        </ion-label>
+                        <h1 slot="end">
+                            <ion-icon color="danger" name="trash"></ion-icon>
+                        </h1>
+                    </ion-item>
+                </ion-list>
+                <app-infinite-scroll (loadData)="loadData($event)"></app-infinite-scroll>
             </ion-col>
         </ion-row>
     </ion-grid>
