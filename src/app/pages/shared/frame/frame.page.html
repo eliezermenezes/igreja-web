@@ -1,0 +1,14 @@
+<ion-app>
+    <ion-split-pane contentId="menu-content">
+        <ion-menu contentId="menu-content">
+            <ion-content>
+                <ion-list lines="none">
+                    <app-user-card [user]="user" (loggedOut)="logout($event)"></app-user-card>
+                    <app-itens-menu [groups]="groups"></app-itens-menu>
+                </ion-list>
+            </ion-content>
+            <app-menu-footer (loadLanguage)="changeLanguage($event)"></app-menu-footer>
+        </ion-menu>
+        <ion-router-outlet id="menu-content"></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

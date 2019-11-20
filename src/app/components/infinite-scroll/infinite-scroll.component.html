@@ -1,0 +1,6 @@
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="{{ 'loading_more_data' | translate }}">
+    </ion-infinite-scroll-content>
+</ion-infinite-scroll>
