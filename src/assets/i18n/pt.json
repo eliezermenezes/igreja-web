@@ -3,11 +3,17 @@
     "pt": "Português",
     "title": "Igreja Batista Sal da Terra",
     "home": "Página inicial",
+    "new_member": "Novo membro",
+    "close": "Fechar",
+    "loading": "Carregando...",
+    "loading_more_data": "Carregando mais dados...",
+    "authenticating": "Autenticando...",
     "secretary": {
         "name": "Secretaria",
         "members": "Membros",
-        "recent_members": "Membros Recentes",
-        "settings": "Configurações"
+        "recent_members": "Recentemente adicionados",
+        "settings": "Configurações",
+        "all_members": "Todos"
     },
     "patrimony": {
         "name": "Patrimônio",
@@ -20,5 +26,8 @@
         "expenses": "Despesas",
         "extracts": "Extratos"
     },
-    "loading_more_data": "Carregando mais dados..."
+    "message": {
+        "success": "Os dados foram salvos com sucesso!",
+        "error": "Erro ao tentar salvar os dados!"
+    }
 }

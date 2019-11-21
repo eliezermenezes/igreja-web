@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MembersPage } from './members.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { TranslateModule } from '@ngx-translate/core';
+import { ModalPage } from '../shared/modal/modal.page';
 
 const routes: Routes = [
     {
@@ -20,9 +20,14 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         ComponentsModule,
-        TranslateModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [MembersPage]
+    declarations: [
+        MembersPage,
+        ModalPage
+    ],
+    entryComponents: [
+        ModalPage
+    ]
 })
 export class MembersPageModule { }

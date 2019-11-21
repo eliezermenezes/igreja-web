@@ -8,6 +8,7 @@ import { MenuFooterComponent } from './menu-footer/menu-footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { ItensMenuComponent } from './itens-menu/itens-menu.component';
+import { TranslateComponent } from './translate/translate.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { ItensMenuComponent } from './itens-menu/itens-menu.component';
         UserCardComponent,
         MenuFooterComponent,
         InfiniteScrollComponent,
-        ItensMenuComponent
+        ItensMenuComponent,
+        TranslateComponent
     ],
     imports: [
         CommonModule,
@@ -29,7 +31,8 @@ import { ItensMenuComponent } from './itens-menu/itens-menu.component';
         UserCardComponent,
         MenuFooterComponent,
         InfiniteScrollComponent,
-        ItensMenuComponent
+        ItensMenuComponent,
+        TranslateComponent
     ]
 })
 export class ComponentsModule { }

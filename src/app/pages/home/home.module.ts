@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { ComponentsModule } from '../../components/components.module';
-import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     imports: [
@@ -14,7 +13,6 @@ import { TranslateModule } from '@ngx-translate/core';
         FormsModule,
         IonicModule,
         ComponentsModule,
-        TranslateModule,
         RouterModule.forChild([
             {
                 path: '',

@@ -3,11 +3,17 @@
     "pt": "Portuguese",
     "title": "Batista Sal da Terra Church",
     "home": "Home",
+    "new_member": "New member",
+    "close": "Close",
+    "loading": "Loading...",
+    "loading_more_data": "Loading more data...",
+    "authenticating": "Authenticating...",
     "secretary": {
         "name": "Secretary",
         "members": "Members",
-        "recent_members": "Recent Members",
-        "settings": "Settings"
+        "recent_members": "Recently added",
+        "settings": "Settings",
+        "all_members": "All"
     },
     "patrimony": {
         "name": "Patrimony",
@@ -20,5 +26,8 @@
         "expenses": "Expenses",
         "extracts": "Extracts"
     },
-    "loading_more_data": "Loading more data..."
+    "message": {
+        "success": "Data was successfully saved!",
+        "error": "Error trying to save data!"
+    }
 }

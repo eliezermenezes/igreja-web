@@ -6,13 +6,14 @@
     </ion-grid>
 </ion-content>
 
-
 <ion-content class="ion-padding" *ngIf="users.length > 0">
     <ion-grid class="md grid-fixed">
         <ion-row>
             <ion-col>
                 <ion-toolbar>
-                    <ion-title size="large"> {{ 'secretary.settings' | translate }} </ion-title>
+                    <ion-title size="large">
+                        <translate text="secretary.settings"></translate>
+                    </ion-title>
                 </ion-toolbar>
                 <ion-toolbar>
                     <ion-searchbar color="light"></ion-searchbar>
@@ -38,7 +39,7 @@
                         </h1>
                     </ion-item>
                 </ion-list>
-                <app-infinite-scroll (loadData)="loadData($event)"></app-infinite-scroll>
+                <app-infinite-scroll (loadData)="loadData()"></app-infinite-scroll>
             </ion-col>
         </ion-row>
     </ion-grid>

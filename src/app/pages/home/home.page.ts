@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/user.model';
+import { NotificationService } from 'src/app/shared/services/notification.service';
+
+import { CONSTANTS } from 'src/app/constants';
 
 @Component({
     selector: 'app-home',
@@ -37,14 +40,11 @@ export class HomePage implements OnInit {
         this.loading = false;
     }
 
-    loadData(event: any) {
-        setTimeout(() => {
-            this.setUsers();
-            event.target.complete();
+    loadData() {
+        this.setUsers();
 
-            if (this.users.length == 30) {
-                event.target.disabled = true;
-            }
-        }, 1000);
+        this.users.length === 20
+            ? NotificationService.emit(CONSTANTS.SYSTEM_EVENTS.DISABLED_POPULATE, true)
+            : NotificationService.emit(CONSTANTS.SYSTEM_EVENTS.COMPLETE_POPULATE, true);
     }
 }

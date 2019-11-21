@@ -4,11 +4,13 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-button color="dark" expand="full" size="small" (click)="translate('pt')">{{ 'pt' | translate }}
+                    <ion-button color="dark" expand="full" size="small" (click)="translate('pt')" class="capitalize">
+                        <translate text="pt"></translate>
                     </ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-button color="dark" expand="full" size="small" (click)="translate('en')">{{ 'en' | translate }}
+                    <ion-button color="dark" expand="full" size="small" (click)="translate('en')" class="capitalize">
+                        <translate text="en"></translate>
                     </ion-button>
                 </ion-col>
             </ion-row>

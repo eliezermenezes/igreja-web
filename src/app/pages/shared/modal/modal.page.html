@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Dados do usuário
+        </ion-title>
+        <ion-chip slot="end" outline color="tertiary" (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+            <translate text="close"></translate>
+        </ion-chip>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <small>Name</small>
+    <br>
+    <h2>{{ name }}</h2>
+</ion-content>

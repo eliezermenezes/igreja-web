@@ -5,12 +5,14 @@
 <div *ngIf="groups">
     <div *ngFor="let group of groups">
         <ion-item-divider *ngIf="group.name">
-            <ion-label>{{ group.name | translate }}</ion-label>
+            <ion-label>
+                <translate [text]="group.name"></translate>
+            </ion-label>
         </ion-item-divider>
 
         <ion-item class="clickable" *ngFor="let page of group.pages" [class.active]="isActivePage(page.url)"
             (click)="goToPage(page.url)" detail>
-            <ion-icon slot="start" color="light" name="{{ page.icon }}"></ion-icon> {{ page.title | translate }}
+            <ion-icon slot="start" color="light" name="{{ page.icon }}"></ion-icon><translate [text]="page.title"></translate>
         </ion-item>
     </div>
 </div>

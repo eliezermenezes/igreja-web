@@ -1,26 +1,34 @@
 <app-navbar></app-navbar>
 
-<ion-content class="ion-padding" *ngIf="loading">
+<ion-content class="ion-padding" *ngIf="loadingt">
     <ion-grid class="md grid-fixed">
         <app-loading></app-loading>
     </ion-grid>
 </ion-content>
 
-<ion-content class="ion-padding" *ngIf="users.length > 0">
+<ion-content class="ion-padding" *ngIf="!loadingt">
     <ion-grid class="md grid-fixed">
         <ion-row>
             <ion-col>
                 <ion-toolbar>
-                    <ion-title size="large"> {{ 'secretary.members' | translate }} </ion-title>
+                    <ion-title slot="start">
+                        <translate text="secretary.members"></translate>
+                    </ion-title>
+                    <ion-chip slot="end" outline color="success" (click)="success()">
+                        <ion-icon name="person-add"></ion-icon><translate text="new_member"></translate>
+                    </ion-chip>
+                    <ion-chip slot="end" outline color="danger" (click)="danger()">
+                        <ion-icon name="person-add"></ion-icon><translate text="new_member"></translate>
+                    </ion-chip>
                 </ion-toolbar>
-                <ion-toolbar>
+                <!-- <ion-toolbar>
                     <ion-searchbar color="light"></ion-searchbar>
-                </ion-toolbar>
+                </ion-toolbar> -->
 
                 <ion-list>
                     <ion-list-header>
                         <small class="uppercase">
-                            {{ 'secretary.recent_members' | translate }}
+                            <translate text="secretary.recent_members"></translate>
                         </small>
                     </ion-list-header>
 
@@ -39,7 +47,7 @@
                 <ion-list>
                     <ion-list-header>
                         <small class="uppercase">
-                            {{ 'secretary.members' | translate }}
+                            <translate text="secretary.all_members"></translate>
                         </small>
                     </ion-list-header>
 
@@ -54,7 +62,7 @@
                         </ion-label>
                     </ion-item>
                 </ion-list>
-                <app-infinite-scroll (loadData)="loadData($event)"></app-infinite-scroll>
+                <app-infinite-scroll (loadData)="loadData()"></app-infinite-scroll>
             </ion-col>
         </ion-row>
     </ion-grid>
