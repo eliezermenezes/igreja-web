@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Create or Update
+        </ion-title>
+        <ion-chip slot="end" outline color="tertiary" (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+            <translate text="close"></translate>
+        </ion-chip>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-md="6">
+                <form [formGroup]="form">
+                    <br>
+                    <p class="ion-text-center animated fadeIn">
+                        <img src="assets/icon/icon.png" alt="Dachshop" width="150">
+                    </p>
+                    <br>
+                    <ion-list lines="none" class="animated fadeIn">
+                        <ion-item>
+                            <ion-input type="text" maxlength="20" placeholder="Usuário" formControlName="name"
+                                autocomplete="name" (keyup.enter)="submit()">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="text" placeholder="Senha" formControlName="personal_email"
+                                autocomplete="personal_email">
+                            </ion-input>
+                        </ion-item>
+                    </ion-list>
+                    <br>
+                    <ion-button color="light" expand="full" size="large" class="animated fadeIn"
+                        (click)="submit()">
+                        Salvar
+                    </ion-button>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

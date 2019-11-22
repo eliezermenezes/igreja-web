@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MembersPage } from './members.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { ModalPage } from '../shared/modal/modal.page';
+import { MembersService } from './members.service';
+import { MemberFormPage } from '../secretary/member-form/member-form.page';
 
 const routes: Routes = [
     {
@@ -20,14 +22,20 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         ComponentsModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        ReactiveFormsModule
     ],
     declarations: [
         MembersPage,
+        MemberFormPage,
         ModalPage
     ],
     entryComponents: [
-        ModalPage
+        ModalPage,
+        MemberFormPage
+    ],
+    providers: [
+        MembersService
     ]
 })
 export class MembersPageModule { }

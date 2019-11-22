@@ -13,6 +13,10 @@ export class LoadingService {
         private translate: TranslateService
     ) { }
 
+    /**
+     * Create loading element
+     * @param message message to be displayed when is loading
+     */
     public async start(message: string) {
         this.loading = await this.loadingCtrl.create({
             message: this.translation(message)
@@ -20,16 +24,9 @@ export class LoadingService {
         this.loading.present();
     }
 
-    // async TryLoading() {
-    //     const loading = await this.loadingCtrl.create({ message: CONSTANTS.AUTHENTICATING });
-    //     loading.present();
-
-    //     setTimeout(() => {
-    //         loading.dismiss();
-    //         // this.showMessage(CONSTANTS.MESSAGES.SUCCESS);
-    //     }, 500);
-    // }
-
+    /**
+     * Finish loading
+     */
     public finalize() {
         this.loading.dismiss();
     }

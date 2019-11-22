@@ -5,26 +5,29 @@ import { NotificationService } from 'src/app/shared/services/notification.servic
 import { CONSTANTS } from 'src/app/constants';
 import { ModalController, LoadingController } from '@ionic/angular';
 import { ModalPage } from '../shared/modal/modal.page';
-import { ToastService } from 'src/app/shared/services/toast.service';
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { MembersService } from './members.service';
+import { IMember } from 'src/app/models/member.interface';
+import { MemberFormPage } from '../secretary/member-form/member-form.page';
 
 @Component({
     selector: 'app-members',
     templateUrl: './members.page.html',
     styleUrls: ['./members.page.scss'],
+    providers: [LoadingService],
 })
 export class MembersPage implements OnInit {
     public user: UserModel;
-    public users: UserModel[] = [];
-    // public loading: Boolean = true;
-    public perPage: Number = 10;
+    public members: Array<IMember>;
+    public loadingMembers: Boolean = true;
 
     constructor(
         private modalCtrl: ModalController,
-        // private loadingCtrl: LoadingController,
-        private toast: ToastService,
-        private loading: LoadingService
-    ) { }
+        private loading: LoadingService,
+        private memberSrc: MembersService
+    ) {
+        this.members = new Array<IMember>();
+    }
 
     ngOnInit() {
         this.user = {
@@ -38,49 +41,53 @@ export class MembersPage implements OnInit {
         };
 
         setTimeout(() => {
-            this.setUsers();
+            // this.setUsers();
+            this.getMembers();
         }, 1500);
     }
 
     setUsers() {
         for (let i = 0; i < 10; i++) {
-            this.users.push(this.user);
+            // this.users.push(this.user);
         }
-        // this.loading = false;
+        this.loadingMembers = false;
+    }
+
+    public async getMembers() {
+        try {
+            this.members = await this.memberSrc.getAll();
+            this.loadingMembers = false;
+        } catch(error) {
+            this.loadingMembers = false;
+            console.log(error);
+        }
+    }
+
+    public submit() {
+
     }
 
     loadData() {
         this.setUsers();
 
-        this.users.length === 30
-            ? NotificationService.emit(CONSTANTS.SYSTEM_EVENTS.DISABLED_POPULATE, true)
-            : NotificationService.emit(CONSTANTS.SYSTEM_EVENTS.COMPLETE_POPULATE, true);
+        // this.users.length === 30
+        //     ? NotificationService.emit(CONSTANTS.SYSTEM_EVENTS.DISABLED_POPULATE, true)
+        //     : NotificationService.emit(CONSTANTS.SYSTEM_EVENTS.COMPLETE_POPULATE, true);
     }
 
     async presentModal() {
         const modal = await this.modalCtrl.create({
-            component: ModalPage,
-            componentProps: this.user
+            component: MemberFormPage,
+            cssClass: 'dialog-modal'
+            // componentProps: this.user
         });
         return await modal.present();
     }
 
-    async TryLoading() {
+    TryLoading() {
         this.loading.start(CONSTANTS.LOADING);
-
-        // const loading = await this.loadingCtrl.create({ message: CONSTANTS.AUTHENTICATING});
-        // loading.present();
-
         setTimeout(() => {
-            // loading.dismiss();
-            // this.showMessage(CONSTANTS.MESSAGES.SUCCESS);
-        }, 500);
-    }
-
-    success() {
-        this.toast.success(CONSTANTS.MESSAGES.SUCCESS);
-    }
-    danger() {
-        this.toast.error(CONSTANTS.MESSAGES.ERROR);
+            this.loading.finalize();
+        }, 2000);
     }
 }
