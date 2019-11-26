@@ -6,9 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MembersPage } from './members.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { ModalPage } from '../../shared/modal/modal.page';
+import { ModalPage } from '../shared/modal/modal.page';
 import { MembersService } from './members.service';
-import { MemberFormPage } from '../member-form/member-form.page';
+import { MemberFormPage } from '../secretary/member-form/member-form.page';
 
 const routes: Routes = [
     {

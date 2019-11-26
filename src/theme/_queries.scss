@@ -1,5 +1,4 @@
 $width-lg: 992px;
-$width-sm: 768px;
 
 $color-dark: #222428;
 $background-dark: darken($color-dark, 5%);
@@ -12,23 +11,9 @@ $background-dark: darken($color-dark, 5%);
     }
 }
 
-@media (min-width: $width-sm) {
+@media (min-width: 768px) {
     .dialog-modal {
-        --width: 50vw !important;
+        --width: 90vw !important;
         --height: 80vh !important;
-    }
-}
-
-@media (max-width: $width-sm) {
-    ion-content {
-        ion-grid {
-            ion-card {
-                --background: $color-dark !important;
-                background: $color-dark !important;
-                box-shadow: none !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-        }
     }
 }

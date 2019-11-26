@@ -14,13 +14,16 @@
                     <ion-title slot="start">
                         <translate text="secretary.members"></translate>
                     </ion-title>
-                    <ion-chip slot="end" outline color="success" (click)="openModal()">
+                    <ion-chip slot="end" outline color="success" (click)="presentModal()">
                         <ion-icon name="person-add"></ion-icon><translate text="new_member"></translate>
                     </ion-chip>
                     <ion-chip slot="end" outline color="primary" (click)="TryLoading()">
                         <ion-icon name="person-add"></ion-icon> <span>Loading</span>
                     </ion-chip>
                 </ion-toolbar>
+                <!-- <ion-toolbar>
+                    <ion-searchbar color="light"></ion-searchbar>
+                </ion-toolbar> -->
 
                 <ion-list>
                     <ion-list-header>
@@ -31,7 +34,7 @@
 
                     <ion-item>
                         <ion-avatar slot="start">
-                            <img src="https://baltademos.blob.core.windows.net/eshop/batman.png">
+                            <img src="./avatar-poe.png">
                         </ion-avatar>
                         <ion-label>
                             <h2>Poe</h2>
@@ -48,7 +51,7 @@
                         </small>
                     </ion-list-header>
 
-                    <ion-item *ngFor="let member of members" class="clickable" (click)="openModal(member)" detail>
+                    <ion-item *ngFor="let member of members" class="clickable" detail>
                         <ion-avatar slot="start">
                             <img [src]="member.avatar">
                         </ion-avatar>

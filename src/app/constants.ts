@@ -6,8 +6,7 @@ export const CONSTANTS = {
     CLOSE: 'close',
     SYSTEM_EVENTS: {
         COMPLETE_POPULATE: 'event_complete_populate',
-        DISABLED_POPULATE: 'event_disabled_populate',
-        CREATED_USER: 'event_created_user'
+        DISABLED_POPULATE: 'event_disabled_populate'
     },
     MESSAGES: {
         SUCCESS: 'message.success',
@@ -16,8 +15,5 @@ export const CONSTANTS = {
     COLORS: {
         SUCCESS: 'success',
         DANGER: 'danger'
-    },
-    POPUPS: {
-        CSS_CLASS: 'dialog-modal'
     }
 };

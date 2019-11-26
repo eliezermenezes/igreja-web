@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, MenuController } from '@ionic/angular';
 import { UserModel } from 'src/app/models/user.model';
 import { TranslateService } from '@ngx-translate/core';
+import { PageModel } from 'src/app/models/page.model';
 
 @Component({
     selector: 'app-frame',
@@ -11,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class FramePage implements OnInit {
     public groups: any;
 
-    public loggedUser: UserModel;
+    public user: UserModel;
     public activePage: String;
 
     constructor(
@@ -26,7 +27,7 @@ export class FramePage implements OnInit {
                 'pages': [
                     {
                         'title': 'home',
-                        'url': 'home',
+                        'url': 'pages/home',
                         'icon': 'home'
                     }
                 ]
@@ -35,11 +36,11 @@ export class FramePage implements OnInit {
                 'pages': [
                     {
                         'title': 'secretary.members',
-                        'url': 'members',
+                        'url': 'pages/members',
                         'icon': 'people'
                     }, {
                         'title': 'secretary.settings',
-                        'url': 'settings',
+                        'url': 'pages/settings',
                         'icon': 'settings'
                     }
                 ]
@@ -48,11 +49,11 @@ export class FramePage implements OnInit {
                 'pages': [
                     {
                         'title': 'patrimony.goods',
-                        'url': 'goods',
+                        'url': 'pages/goods',
                         'icon': 'gift'
                     }, {
                         'title': 'patrimony.reservations',
-                        'url': 'reservations',
+                        'url': 'pages/reservations',
                         'icon': 'speedometer'
                     }
                 ]
@@ -61,21 +62,21 @@ export class FramePage implements OnInit {
                 'pages': [
                     {
                         'title': 'financial.revenue',
-                        'url': 'revenues',
+                        'url': 'pages/revenue',
                         'icon': 'arrow-up'
                     }, {
                         'title': 'financial.expenses',
-                        'url': 'expenses',
+                        'url': 'pages/expenses',
                         'icon': 'arrow-down'
                     }, {
                         'title': 'financial.extracts',
-                        'url': 'extracts',
+                        'url': 'pages/extracts',
                         'icon': 'options'
                     }
                 ]
             }];
 
-            this.loggedUser = {
+            this.user = {
                 name: 'Eliezer Menezes',
                 username: 'menezes',
                 email: 'menezes@example.dom',

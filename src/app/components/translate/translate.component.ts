@@ -9,6 +9,9 @@ export class TranslateComponent implements OnInit {
     @Input()
     public text: String;
 
+    @Input()
+    public icon: String;
+
     constructor() { }
 
     ngOnInit() { }
