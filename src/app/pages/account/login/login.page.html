@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <translate text="name-app"></translate>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid class="grid-fixed">
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-md="6" size-xs="12">
+                <ion-card color="dark animated fadeIn">
+                    <img class="mx-auto d-block"
+                        src="http://bestclouds.com.br/igreja/wp-content/uploads/2015/03/logo_IBR.png">
+                    <ion-card-header class="ion-text-center">
+                        <ion-card-title>
+                            <translate text="title"></translate>
+                        </ion-card-title>
+                        <ion-card-subtitle>
+                            <translate text="login.label"></translate>
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <form [formGroup]="form" autocomplete="off" (submit)="submit()">
+                            <div class="form-group">
+                                <label for="username">
+                                    <translate text="login.username"></translate>:
+                                </label>
+                                <input type="text" class="form-control" formControlName="username" id="username"
+                                    name="username" placeholder="{{ translate('login.enter_username') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">
+                                    <translate text="login.password"></translate>:
+                                </label>
+                                <div class="input-group mb-2">
+                                    <input [type]="hide ? 'password' : 'text'" class="form-control"
+                                        formControlName="password" id="password" name="password"
+                                        placeholder="{{ translate('login.enter_password') }}">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon color="light" class="clickable" [name]="hide ? 'eye' : 'eye-off'"
+                                                (click)="toggleHide()"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" formControlName="remember_me" id="remember_me">
+                                    <label class="custom-control-label" for="remember_me">
+                                        <translate text="login.remember_me"></translate>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block text-uppercase" type="submit" [disabled]="!form.valid">
+                                    <translate text="login.label"></translate>
+                                </button>
+                                <br>
+                                <button class="btn btn-link btn-block">
+                                    <translate text="login.forgot_password"></translate>
+                                </button>
+                            </div>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

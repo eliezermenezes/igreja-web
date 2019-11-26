@@ -1,4 +1,5 @@
 {
+    "name-app": "Igreja Web - Sistema de Gerenciando",
     "en": "Inglês",
     "pt": "Português",
     "title": "Igreja Batista Sal da Terra",
@@ -8,6 +9,15 @@
     "loading": "Carregando...",
     "loading_more_data": "Carregando mais dados...",
     "authenticating": "Autenticando...",
+    "login": {
+        "label": "Entrar",
+        "username": "Nome de usuário",
+        "password": "Senha",
+        "enter_username": "Informe seu usuário",
+        "enter_password": "Digite sua senha",
+        "forgot_password": "Esqueci minha senha",
+        "remember_me": "Lembre de mim"
+    },
     "secretary": {
         "name": "Secretaria",
         "members": "Membros",

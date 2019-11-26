@@ -3,7 +3,7 @@
         <ion-menu contentId="menu-content">
             <ion-content>
                 <ion-list lines="none">
-                    <app-user-card [user]="user" (loggedOut)="logout($event)"></app-user-card>
+                    <app-user-card [user]="loggedUser" (loggedOut)="logout($event)"></app-user-card>
                     <app-itens-menu [groups]="groups"></app-itens-menu>
                 </ion-list>
             </ion-content>

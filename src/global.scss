@@ -8,8 +8,11 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
+@import 'assets/fonts/stylesheet.css';
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400&display=swap');
+/* Bootstrap and Bs stepper CSS */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
 
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
@@ -27,10 +30,16 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import "~animate.css/animate.min.css";
+
 @import "theme/mixins";
 @import "theme/queries";
 
 :root {
+    --color-dark-steep-100: rgba(0, 0, 0, 0.1);
+    --color-dark-steep-200: #343a40;
+    --color-dark-steep-800: rgba(255, 255, 255, 0.8);
+
     --ion-border-color: var(--ion-color-dark-shade);
     --ion-background-color: var(--ion-color-dark);
     --ion-background-color-rgb: var(--ion-color-dark-rgb);
@@ -44,12 +53,18 @@
     }
 
     ion-toast {
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--color-dark-steep-800);
         --button-color: #fff;
 
         a {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--color-dark-steep-800);
         }
+    }
+
+    .form-control {
+        background-color: var(--color-dark-steep-100);
+        color: var(--color-dark-steep-800);
+        border-color: var(--color-dark-steep-200);
     }
 
     .text-center {
@@ -75,8 +90,8 @@
     }
 
     .clickable:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        --ion-background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--color-dark-steep-100);
+        --ion-background-color: var(--color-dark-steep-100);
         transform: scale(1.02);
         transition: background-color 1s;
         transition: transform 0.5s;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
+import { UtilsService } from './utils/utils.service';
 
 @Injectable({
     providedIn: 'root'
@@ -9,8 +9,8 @@ export class LoadingService {
     public loading: HTMLIonLoadingElement;
 
     constructor(
-        private loadingCtrl: LoadingController,
-        private translate: TranslateService
+        private utils: UtilsService,
+        private loadingCtrl: LoadingController
     ) { }
 
     /**
@@ -19,7 +19,7 @@ export class LoadingService {
      */
     public async start(message: string) {
         this.loading = await this.loadingCtrl.create({
-            message: this.translation(message)
+            message: this.utils.translation(message)
         });
         this.loading.present();
     }
@@ -27,16 +27,7 @@ export class LoadingService {
     /**
      * Finish loading
      */
-    public finalize() {
+    public end() {
         this.loading.dismiss();
-    }
-
-    /**
-     * Text translation
-     * @param text text to be translated
-     */
-    private translation(text: string): string {
-        this.translate.get(text).subscribe(result => text = result);
-        return text;
     }
 }
