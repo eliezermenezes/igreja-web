@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { MemberFormPage } from './member-form.page';
 import { LoadingService } from 'src/app/shared/services/loading.service';
-import { MembersService } from '../../members/members.service';
+import { MembersService } from '../members/members.service';
 
 const routes: Routes = [
     {

@@ -1,4 +1,5 @@
 {
+    "name-app": "Web Church - Management System",
     "en": "English",
     "pt": "Portuguese",
     "title": "Batista Sal da Terra Church",
@@ -8,6 +9,15 @@
     "loading": "Loading...",
     "loading_more_data": "Loading more data...",
     "authenticating": "Authenticating...",
+    "login": {
+        "label": "Login",
+        "username": "Username",
+        "password": "Password",
+        "enter_username": "Enter your username",
+        "enter_password": "Type your password",
+        "forgot_password": "I forgot my password",
+        "remember_me": "Remember me"
+    },
     "secretary": {
         "name": "Secretary",
         "members": "Members",

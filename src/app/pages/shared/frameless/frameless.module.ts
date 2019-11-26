@@ -8,19 +8,19 @@ import { IonicModule } from '@ionic/angular';
 import { FramelessPage } from './frameless.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: FramelessPage
-  }
+    {
+        path: '',
+        component: FramelessPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [FramelessPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RouterModule.forChild(routes)
+    ],
+    declarations: [FramelessPage]
 })
-export class FramelessPageModule {}
+export class FramelessPageModule { }
